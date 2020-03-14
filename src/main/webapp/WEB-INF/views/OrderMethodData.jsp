@@ -8,34 +8,78 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h3 style="text-align:center;color:red">WELCOME TO ORDER METHOD RECORDS PAGE</h3>
-<a href="excel"><img alt="" src="../resources/images/excel.png" height="30" weight="50"></a>| <a href="pdf"><img alt="" src="../resources/images/pdf.png" height="30" weight="50"></a>
-<c:choose>
-<c:when test="${!empty list}">
-<table border="1">
-<tr style="color:orange;"><th>ID</th>
-<th>MODE</th>
-<th>CODE</th>
-<th>TYPE</th>
-<th>ACCEPT</th>
-<th>NOTE</th>
-<th colspan="3">OPERATIONS</th>
+<%@include file="UserMenu.jsp" %>
+	<div class="container">
+		<div class="card">
+			<div class="card-header bg-primary text-white text-center">
+				<H3>WELCOME TO ORDER METHOD DATA PAGE</H3>
 
-</tr>
-<c:forEach items="${list}" var="ob">
-<tr><td>${ob.orderId}</td>
-<td>${ob.orderMode}</td>
-<td>${ob.orderCode}</td>
-<td>${ob.orderType}</td>
-<td>${ob.orderAccept}</td>
-<td>${ob.orderDesc}</td>
-<td><a href=delete?oid=${ob.orderId}> <img alt="" src="../resources/images/delete.png" height="30" weight="50"> </a></td>
-<td><a href=edit?oid=${ob.orderId}><img alt="" src="../resources/images/edit1.png" height="30" weight="50"></a></td>
-<td><a href=view?oid=${ob.orderId}><img alt="" src="../resources/images/view.png" height="30" weight="50"></a></td>
+			</div>
+			<div class="card-body">
+				<a href="excel"><img src="../resources/images/excel.png" width="30" height="40" /> </a>
+				<a href="pdf"><img src="../resources/images/pdf.png" width="30" height="40" /></a>
+				<c:choose>
+					<c:when test="${!empty list}">
+						<table class="table table-hover">
+							<tr class="bg-success text-white">
+								<th>MODE</th>
+								<th>CODE</th>
+								<th>TYPE</th>
+								<th>ACCEPT</th>
+								<th>NOTE</th>
+								<th colspan="3" align="center">OPERATIONS</th>
+							</tr>
+							<!-- for(ShipmentType ob:list){} -->
+							<c:forEach items="${list}" var="ob">
+								<tr>
 
-</c:forEach>
-</table>
-</c:when>
-</c:choose>
+									<td>${ob.orderMode}</td>
+									<td>${ob.orderCode}</td>
+									<td>${ob.orderType}</td>
+									<td>${ob.orderAccept}</td>
+									<td>${ob.orderDesc}</td>
+									<td><a href="delete?oid=${ob.orderId}" class="btn btn-danger"> 
+									<!-- <img src="../resources/images/delete.png" width="20" height="20" /> -->
+									DELETE
+									</a></td>
+									<td><a href="edit?oid=${ob.orderId}" class="btn btn-info"> 
+									<!-- <img	src="../resources/images/edit.png" width="20" height="20" /> -->
+									EDIT
+									</a></td>
+									<td><a href="view?oid=${ob.orderId}" class="btn btn-warning"> 
+									<!-- <img src="../resources/images/view.png" width="20" height="20" /> -->
+									VIEW
+									
+									</a></td>
+								</tr>
+							</c:forEach>
+						</table>
+					</c:when>
+					<c:otherwise>
+						<H4>NO DATA FOUND!!</H4>
+					</c:otherwise>
+				</c:choose>
+			</div>
+			
+			<c:if test="${!empty message }">
+				<c:choose>
+					<c:when test="${opr eq 'DEL'}">
+						<div class="card-footer bg-danger text-white text-center"><b>${message }</b></div>
+					</c:when>
+					<c:otherwise>
+						<div class="card-footer bg-info text-white text-center"><b>${message }</b></div>
+					
+					</c:otherwise>
+				</c:choose>
+			</c:if>
+			
+			
+		</div> <!-- card end -->
+
+
+	</div>
+	<!-- container end -->
+
 </body>
 </html>
+

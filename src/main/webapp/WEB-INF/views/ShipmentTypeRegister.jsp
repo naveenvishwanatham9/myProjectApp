@@ -1,3 +1,4 @@
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1" isELIgnored="false"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -13,8 +14,7 @@
 	<%@include file="UserMenu.jsp" %>
 	<div class="container">
 		<div class="card">
-			<div
-				class="card-header bg-primary text-center text-white text-uppercase">
+			<div class="card-header bg-primary text-center text-white text-uppercase">
 				<h3>Welcome to Shipment Type Register Page</h3>
 			</div>
 			<div class="card-body">

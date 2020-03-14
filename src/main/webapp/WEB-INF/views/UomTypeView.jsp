@@ -7,14 +7,24 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h3 style="color:red;text-align:center">WELCOME TO UOM VIEW PAGE</h3>
-<a href="excel?id=${ob.uomId}"><img alt="" src="../resources/images/excel.png" height="30" weight="50"></a> | <a href="pdf?id=${ob.uomId}"><img alt="" src="../resources/images/pdf.png" height="30" weight="50"></a>
-<table border="1">
-<tr><th style="color:purple;text-align:left;">ID</th><td style="color:fuchsia;">${um.uomId }</td></tr>
-<tr><th style="color:purple;text-align:left;">TYPE</th><td style="color:fuchsia;">${um.uomType}</td></tr>
-<tr><th style="color:purple;text-align:left;">MODEL</th><td style="color:fuchsia;">${um.uomModel}</td></tr>
-<tr><th style="color:purple;text-align:left;">DESCRIPTION</th><td style="color:fuchsia;">${um.uomDesc}</td></tr>
-
+<%@include file="UserMenu.jsp"%>
+	<div class="container">
+		<div class="card">
+			<div class="card-header bg-primary text-center text-white text-uppercase">
+				<h3>WELCOME TO UOM TYPE VIEW PAGE</h3>
+			</div>
+<div class="card-body">
+<a href="excel?id=${um.uomId}"><img src="../resources/images/excel.png" width="30" height="40" /> </a>
+<a href="pdf?id=${um.uomId}"><img src="../resources/images/pdf.png" width="30" height="40" /></a>
+<table class="table table-hover">
+<tr><th>ID</th><td>${um.uomId}</td></tr>
+<tr><th>TYPE</th><td>${um.umType}</td></tr>
+<tr><th>MODEL</th><td>${um.uomModel}</td></tr>
+<tr><th>DESCRIPTION</th><td>${um.uomDesc}</td></tr>
+</tr>
 </table>
+</div>
+</div>
+</div>
 </body>
 </html>

@@ -7,20 +7,26 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h3 style="color: red; text-align: center">WELCOME TO SHIPMENT TYPE VIEW PAGE</h3>
-<a href="excel?id=${ob.shipId}">Excel Export</a> | <a href="pdf?id=${ob.shipId}">Pdf Export</a>
-
-<table border="1">
-<tr><th style="color: purple;">ID</th><td>${ob.shipId}</td></tr>
-<tr><th style="color: purple;">MODE</th><td>${ob.shipMode}</td></tr>
-<tr><th style="color: purple;">CODE</th><td>${ob.shipCode}</td></tr>
-<tr><th style="color: purple;">ENABLE</th><td>${ob.enbShip}</td></tr>
-<tr><th style="color: purple;">GRADE</th><td>${ob.shipGrad}</td></tr>
-<tr><th style="color: purple;">NOTE</th><td>${ob.shipDesc}</td></tr>
+	<%@include file="UserMenu.jsp"%>
+	<div class="container">
+		<div class="card">
+			<div class="card-header bg-primary text-center text-white text-uppercase">
+				<h3>WELCOME TO SHIPMENT TYPE VIEW PAGE</h3>
+			</div>
+<div class="card-body">
+<a href="excel?id=${ob.shipId}"><img src="../resources/images/excel.png" width="30" height="40" /> </a>
+<a href="pdf?id=${ob.shipId }"><img src="../resources/images/pdf.png" width="30" height="40" /></a>
+<table class="table table-hover">
+<tr><th>ID</th><td>${ob.shipId}</td></tr>
+<tr><th>MODE</th><td>${ob.shipMode}</td></tr>
+<tr><th>CODE</th><td>${ob.shipCode}</td></tr>
+<tr><th>ENABLE</th><td>${ob.enbShip}</td></tr>
+<tr><th>GRADE</th><td>${ob.shipGrad}</td></tr>
+<tr><th>NOTE</th><td>${ob.shipDesc}</td></tr>
+</tr>
 </table>
-
-
-
-
+</div>
+</div>
+</div>
 </body>
 </html>

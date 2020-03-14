@@ -7,15 +7,28 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h3 style="color: red; text-align: center">WELCOME TO ORDER METHOD VIEW PAGE</h3>
-<a href="excel"><img alt="" src="../resources/images/excel.png" height="30" weight="50"></a>| <a href="pdf"><img alt="" src="../resources/images/pdf.png" height="30" weight="50"></a>
-<table border="1">
-<tr><th style="color: purple;">ID</th><td>${ob.orderId}</td></tr>
-<tr><th style="color: purple;">MODE</th><td>${ob.orderMode}</td></tr>
-<tr><th style="color: purple;">CODE</th><td>${ob.orderCode}</td></tr>
-<tr><th style="color: purple;">TYPE</th><td>${ob.orderType}</td></tr>
-<tr><th style="color: purple;">ACCEPT</th><td>${ob.orderAccept}</td></tr>
-<tr><th style="color: purple;">DESCRIPTION</th><td>${ob.orderDesc}</td></tr>
+	<%@include file="UserMenu.jsp"%>
+	<div class="container">
+		<div class="card">
+			<div class="card-header bg-primary text-center text-white text-uppercase">
+				<h3>WELCOME TO SHIPMENT TYPE VIEW PAGE</h3>
+			</div>
+<div class="card-body">
+<a href="excel?id=${ob.orderId }"><img src="../resources/images/excel.png" width="30" height="40" /> </a>
+<a href="pdf?id=${ob.orderId }"><img src="../resources/images/pdf.png" width="30" height="40" /></a>
+<table class="table table-hover">
+<tr><th>ID</th><td>${ob.orderId}</td></tr>
+<tr><th>MODE</th><td>${ob.orderMode}</td></tr>
+<tr><th>CODE</th><td>${ob.orderCode}</td></tr>
+<tr><th>TYPE</th><td>${ob.orderType}</td></tr>
+<tr><th>ACCEPT</th><td>${ob.orderAccept}</td></tr>
+<tr><th>NOTE</th><td>${ob.orderDesc}</td></tr>
+</tr>
 </table>
+</div>
+</div>
+</div>
 </body>
 </html>
+
+

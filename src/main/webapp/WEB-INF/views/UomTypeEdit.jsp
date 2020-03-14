@@ -8,26 +8,75 @@
 <title>Insert title here</title>
 </head>
 <body>
-<table>
-<h3 style="text-align: center;color: red;">WELCOME TO UOM TYPE REGISTER PAGE </h3>
-<form:form action="update" method="post" modelAttribute="uomType">
-<pre>
-<tr> <td style="color:purple;">Uom Id:</td> <td><form:input path="uomId" readonly="true"/></td></tr>
-
-<tr><td style="color:purple;"> Uom Type:</td> <td><form:select path="uomType">
-<form:option value="">--select--</form:option>
-<form:option value="PACKING">PACKING</form:option>
-<form:option value="NO PACKING">NO PACKING</form:option>
-<form:option value="NA">--NA--</form:option>
-</form:select></td></tr>
-
-<tr><td style="color:purple;">Uom Model: </td> <td><form:input type="text" path="uomModel"/></td>
-
-<tr><td style="color:purple;">Description:</td> <td><form:textarea path="uomDesc" ></form:textarea></td><br>
-<tr><td style="text-align:center"><input type="submit" value="CREATE UOM"/></td></tr><td>
-</pre>
+<%@include file="UserMenu.jsp" %>
+	<div class="container">
+		<div class="card">
+			<div class="card-header bg-primary text-center text-white text-uppercase">
+				<h3>WELCOME TO UOM TYPE EDIT PAGE</h3>
+			</div>
+			<div class="card-body">
+				<form:form action="update" method="post" modelAttribute="uomType">
+					
+					<div class="row">
+						<div class="col-4">
+						<label for="uomId">UOM Id</label>
+						</div>
+						<div class="col-4">
+						<form:input path="uomId" readonly="true" class="form-controller"/>						
+						</div>
+						</div>
+					
+					<div class="row">
+						<div class="col-4">
+						<label for="uomType">UOM TYPE</label>
+						</div>
+						<div class="col-4">
+							<form:select path="umType" class="form-control">
+								<form:option value="">--select--</form:option>
+								<form:option value="PACKING">PACKING</form:option>
+								<form:option value="NO PACKING">NO PACKING</form:option>
+								<form:option value="">--NA--</form:option>
+							</form:select>
+						</div>
+						</div>
+					<div class="row">
+						<div class="col-4">
+						<label for="uomModel">UOM MODEL</label>
+						</div>
+						<div class="col-4">
+						<form:input path="uomModel" class="form-controller"/>						
+						</div>
+						</div>
+						
+						<div class="row">
+						<div class="col-4">
+							<label for="uomDesc">DESCRIPTION</label>
+						</div>
+						<div class="col-4">
+					<form:textarea path="uomDesc" class="form-controller" />
+						</div>
+						</div>
+						
+						<div class="row">
+						<div class="col-4"></div>
+						<div class="col-4">
+							<input type="submit" value="Edit Uom" class="btn btn-success" />
+							 <input type="reset" value="Clear" class="btn btn-danger" />
+						</div>
+					</div>
+						
 </form:form>
-</table><br>
-${message}
-</body>
+
+					</div>
+
+			<c:if test="${!empty message }">
+				<div class="card-footer bg-info text-white text-center">
+					<b>${message}</b>
+				</div>
+			</c:if>
+		</div>
+		<!-- card end -->
+	</div>
+	<!-- container end -->
+	</body>
 </html>
